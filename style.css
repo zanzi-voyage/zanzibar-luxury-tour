@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    color: #333;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url('hero.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    background: #f9a825;
+    color: #000;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 10%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #004d40;
+}
+
+/* SERVICES */
+.services {
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-box {
+    background: #e0f2f1;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+/* ATTRACTIONS */
+.attraction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.image-box {
+    height: 260px;
+    background: #d9d9d9;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* WHY US */
+.why-us ul {
+    max-width: 600px;
+    margin: auto;
+    list-style: none;
+    font-size: 20px;
+}
+
+.why-us li {
+    margin: 15px 0;
+}
+
+/* CONTACT */
+.contact {
+    background: #004d40;
+    color: white;
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    background: #00251a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    font-size: 30px;
+    padding: 16px 18px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+}
+.whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    font-size: 40px;          /* ICON KUBWA */
+    padding: 22px 25px;      /* BUTTON KUBWA */
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,.4);
+    z-index: 9999;
+    animation: pulse 1.8s infinite;
+}
+
+/* ANIMATION YA KUVUTIA */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+.image-box {
+    height: 270px;
+    background: #bbb;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.image-box span {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0,0,0,.6);
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+}
+
+.image-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 35px rgba(0,0,0,.3);
+}
+.trust {
+    background: #f1f8f7;
+    text-align: center;
+    padding: 70px 15%;
+    font-size: 18px;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,77,64,.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    z-index: 10000;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+.reviews {
+    background: #fff;
+    padding: 80px 15%;
+    text-align: center;
+}
+
+.review-box {
+    background: #f1f8f7;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+.booking form {
+    max-width: 500px;
+    margin: auto;
+    display: grid;
+    gap: 15px;
+}
+
+.booking input, .booking button {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+}
+
+.booking button {
+    background: #00796b;
+    color: white;
+    font-size: 16px;
+}
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background: #004d40;
+    color: white;
+    padding: 50px 10%;
+    font-size: 20px;
+}
+.packages {
+    background: #fff;
+    padding: 80px 10%;
+    display: grid;
+    gap: 30px;
+}
+
+.package-box {
+    background: #f5fbfa;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+@media (max-width: 768px) {
+    .hero h1 { font-size: 38px; }
+    section { padding: 60px 8%; }
+    .stats { flex-direction: column; gap: 20px; }
+}
+.packages {
+    background: #ffffff;
+    color: #333;
+}
+
+.packages h2,
+.package-box h3,
+.package-box p,
+.package-box strong {
+    color: #004d40;
+}.reviews {
+    background: #f9f9f9;
+    color: #333;
+}
+
+.reviews h2 {
+    color: #004d40;
+}
+
+.review-box p,
+.review-box strong {
+    color: #333;
+}.package-box,
+.review-box {
+    border-left: 6px solid #f9a825;
+}
+.whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: #fff;
+    font-size: 46px;          /* ICON KUBWA SANA */
+    padding: 26px 30px;      /* BUTTON KUBWA */
+    border-radius: 50%;
+    text-decoration: none;
+    z-index: 9999;
+    box-shadow: 0 15px 35px rgba(0,0,0,.45);
+    animation: whatsappPulse 1.4s infinite;
+}
+
+/* PULSE YA NGUVU */
+@keyframes whatsappPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.8);
+    }
+    70% {
+        transform: scale(1.12);
+        box-shadow: 0 0 0 25px rgba(37, 211, 102, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+.hero h1 {
+    font-size: 72px;   /* Ilikuwa 60px – sasa ni kubwa & bold */
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 24px;   /* Ilikuwa 20px */
+    line-height: 1.6;
+    max-width: 800px;
+    margin: auto;
+}
+.hero h1 {
+    font-size: 82px;   /* Imeongezwa tena */
+    margin-bottom: 28px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.hero p {
+    font-size: 26px;   /* Description kubwa zaidi */
+    line-height: 1.7;
+    max-width: 850px;
+    margin: auto;
+}
+.booking {
+    background: linear-gradient(135deg, #004d40, #00796b);
+    padding: 90px 15%;
+}
+
+.booking h2 {
+    color: #ffffff;      /* RANGI NYEUPE */
+    font-size: 48px;     /* KUBWA ZAIDI */
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 1px;
+}.booking form {
+    max-width: 600px;
+    margin: auto;
+    display: grid;
+    gap: 20px;
+}
+
+.booking input {
+    padding: 18px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+}
+
+.booking button {
+    padding: 18px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
+    background: #f9a825;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+.fallback {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.fallback a {
+    color: #ffffff;
+    text-decoration: underline;
+}
