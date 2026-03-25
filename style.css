@@ -124,3 +124,41 @@ footer {
     padding: 20px;
     text-align: center;
 }
+
+
+
+
+
+
+.hero {
+    height: 100vh; /* full screen */
+    background: url('https://raw.githubusercontent.com/username/myweb/main/unnamed.webp') center top/cover no-repeat;
+    display: flex;
+    align-items: center; /* maandishi yakuwa katikati vertically */
+    justify-content: center; /* katikati horizontally */
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.4); /* rangi nyeusi kidogo juu ya picha ili maandishi yaonekane */
+    padding: 50px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+}
+
+/* optional button style */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #00bcd4;
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #0097a7;
+}
