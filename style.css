@@ -165,3 +165,30 @@ body{
   justify-content: center;
   flex-direction: column;
 }
+
+
+
+
+
+
+
+
+.cta-box{
+  background: linear-gradient(135deg,#ff7a00,#ffb347);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  margin: 40px 0;
+  border-radius: 15px;
+}
+
+.cta-box h2{
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.cta-box p{
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 20px;
+}
