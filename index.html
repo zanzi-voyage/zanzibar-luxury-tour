@@ -514,3 +514,155 @@ body{
   margin: auto;
 }
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="tours-grid">
+
+  <!-- 1 -->
+  <div class="tour-card">
+    <img src="https://source.unsplash.com/600x400/?zanzibar,beach" alt="">
+    <h3>Beach Tours</h3>
+    <p>7hrs</p>
+    <h4>Safari Blue Tour</h4>
+    <p>Full Day Sea Adventure in Zanzibar</p>
+    <small>Fumba Village</small>
+    <p class="desc">Safari Blue combines sailing, snorkeling, sandbank relaxation and seafood lunch.</p>
+    <div class="rating">⭐ 4.9 (50+ reviews)</div>
+    <div class="price">From $110/person</div>
+  </div>
+
+  <!-- 2 -->
+  <div class="tour-card">
+    <img src="https://source.unsplash.com/600x400/?safari,africa" alt="">
+    <h3>Safari Tours</h3>
+    <p>2 Days</p>
+    <h4>Serengeti Safari</h4>
+    <p>Wildlife Adventure Experience</p>
+    <small>Serengeti</small>
+    <p class="desc">See lions, elephants, and amazing wildlife in natural habitat.</p>
+    <div class="rating">⭐ 4.8 (120+ reviews)</div>
+    <div class="price">From $350/person</div>
+  </div>
+
+  <!-- 3 -->
+  <div class="tour-card">
+    <img src="https://source.unsplash.com/600x400/?stone-town,zanzibar" alt="">
+    <h3>City Tours</h3>
+    <p>5hrs</p>
+    <h4>Stone Town Tour</h4>
+    <p>Historical Cultural Experience</p>
+    <small>Stone Town</small>
+    <p class="desc">Explore history, markets, and culture of Zanzibar.</p>
+    <div class="rating">⭐ 4.7 (80+ reviews)</div>
+    <div class="price">From $40/person</div>
+  </div>
+
+  <!-- 4 -->
+  <div class="tour-card">
+    <img src="https://source.unsplash.com/600x400/?snorkeling,sea" alt="">
+    <h3>Snorkeling</h3>
+    <p>6hrs</p>
+    <h4>Mnemba Reef</h4>
+    <p>Ocean Marine Life Tour</p>
+    <small>Mnemba Island</small>
+    <p class="desc">Swim with dolphins and explore coral reefs.</p>
+    <div class="rating">⭐ 4.9 (95+ reviews)</div>
+    <div class="price">From $90/person</div>
+  </div>
+
+  <!-- 5 -->
+  <div class="tour-card">
+    <img src="https://source.unsplash.com/600x400/?dolphin,sea" alt="">
+    <h3>Dolphin Tour</h3>
+    <p>4hrs</p>
+    <h4>Kizimkazi Tour</h4>
+    <p>Dolphin Watching Experience</p>
+    <small>Kizimkazi</small>
+    <p class="desc">Watch and swim with dolphins in the ocean.</p>
+    <div class="rating">⭐ 4.6 (60+ reviews)</div>
+    <div class="price">From $70/person</div>
+  </div>
+
+  <!-- 6 -->
+  <div class="tour-card">
+    <img src="https://source.unsplash.com/600x400/?sunset,beach" alt="">
+    <h3>Sunset Cruise</h3>
+    <p>3hrs</p>
+    <h4>Romantic Sunset</h4>
+    <p>Evening Ocean Cruise</p>
+    <small>Stone Town Coast</small>
+    <p class="desc">Enjoy sunset views with music and drinks on boat.</p>
+    <div class="rating">⭐ 4.8 (40+ reviews)</div>
+    <div class="price">From $60/person</div>
+  </div>
+
+</div>
+
+<style>
+.tours-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+.tour-card{
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding-bottom: 20px;
+  transition: 0.3s;
+}
+
+.tour-card:hover{
+  transform: translateY(-8px);
+}
+
+.tour-card img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.tour-card h3{
+  margin: 10px;
+  font-size: 18px;
+  color: #0077b6;
+}
+
+.tour-card h4{
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.tour-card p, .tour-card small{
+  margin: 5px 10px;
+  color: #555;
+}
+
+.desc{
+  font-size: 13px;
+}
+
+.rating{
+  margin: 10px;
+  font-weight: bold;
+}
+
+.price{
+  margin: 10px;
+  font-weight: bold;
+  color: green;
+}
+</style>
