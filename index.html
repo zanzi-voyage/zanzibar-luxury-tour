@@ -192,18 +192,32 @@ function toggleMenu2(){
 
 
 
+
 </style>
 
 </head>
 
 <body>
 
-<!-- 🌍 FLAG BUTTON -->
-<div class="lang-btn" onclick="toggleTranslate()">
-  🇬🇧 EN
+<!-- 🌍 LANGUAGE BUTTON -->
+<div class="lang-wrapper">
+
+  <button class="lang-btn">🌍 Language</button>
+
+  <div class="lang-menu" id="langMenu">
+    <div onclick="setLang('en')">🇬🇧 English</div>
+    <div onclick="setLang('fr')">🇫🇷 Français</div>
+    <div onclick="setLang('ro')">🇷🇴 Română</div>
+    <div onclick="setLang('ru')">🇷🇺 Русский</div>
+    <div onclick="setLang('it')">🇮🇹 Italiano</div>
+    <div onclick="setLang('es')">🇪🇸 Español</div>
+    <div onclick="setLang('pt')">🇵🇹 Português</div>
+    <div onclick="setLang('ar')">🇸🇦 العربية</div>
+  </div>
+
 </div>
 
-<!-- GOOGLE TRANSLATE ELEMENT -->
+<!-- GOOGLE TRANSLATE ENGINE -->
 <div id="google_translate_element"></div>
 
 <!-- SAMPLE CONTENT -->
@@ -212,21 +226,33 @@ function toggleMenu2(){
 
 <!-- SCRIPT -->
 <script>
-function googleTranslateElementInit() {
+function googleTranslateElementInit(){
   new google.translate.TranslateElement(
     {
       pageLanguage: 'en',
-      includedLanguages: 'en,fr,ro,ru,it,es,pt,ar',
       autoDisplay: false
     },
     'google_translate_element'
   );
 }
 
-function toggleTranslate(){
-  let el = document.getElementById("google_translate_element");
-  el.style.opacity = "1";
-  el.style.height = "auto";
+// toggle menu
+document.querySelector(".lang-btn").onclick = function(){
+  let menu = document.getElementById("langMenu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+// change language
+function setLang(lang){
+  let select = document.querySelector(".goog-te-combo");
+
+  if(!select){
+    alert("Translator still loading...");
+    return;
+  }
+
+  select.value = lang;
+  select.dispatchEvent(new Event("change"));
 }
 </script>
 
