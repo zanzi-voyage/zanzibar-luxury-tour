@@ -3,168 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gundua Pepo ya Zanzibar</title>
+    <title>Zanzibar Full Screen Hero</title>
     <style>
-        /* MSIMBO WA CSS KWA HERO SECTION SKRINI NZIMA */
-        
-        /* Reset misingi ili hakuna nafasi isiyotakiwa */
+        /* 1. RESET YOTE ILI PICHA IJAE SKRINI NZIMA */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body, html {
+        html, body {
             height: 100%;
-            overflow-x: hidden;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 100%;
+            overflow: hidden; /* Inazuia scroll bar zisizohitajika */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
-        /* Hii ndiyo Hero Section - Skrini Nzima */
-        .hero-section {
+        /* 2. HERO SECTION - FULL SCREEN */
+        .hero {
             position: relative;
-            width: 100vw;
-            height: 100vh;
+            height: 100vh; /* Urefu wa skrini nzima */
+            width: 100vw;  /* Upana wa skrini nzima */
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                              url('http://googleusercontent.com/profile/picture/3');
+            background-size: cover;    /* Inafanya picha ijae eneo lote */
+            background-position: center; /* Picha inakaa katikati */
             display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 0 8%;
+            align-items: center;      /* Maandishi yanakaa katikati (vertical) */
+            justify-content: center;   /* Maandishi yanakaa katikati (horizontal) */
+            text-align: center;       /* Maandishi yanakaa center */
             color: white;
-            /* Hapa ndipo picha ilipo, na imewekewa kivuli cheusi kidogo (gradient) ili maandishi yasomeke */
-            background: 
-                linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                url('http://googleusercontent.com/profile/picture/3') no-repeat center center;
-            background-size: cover; /* Picha itajaza eneo lote */
-            background-attachment: fixed; /* Hiari: Huongeza athari nzuri wakati wa kusongesha skrini */
         }
 
-        /* Maandishi ya katikati */
-        .hero-content {
-            max-width: 600px;
+        /* 3. MAANDISHI NA MPANGO WAKE */
+        .content {
             z-index: 2;
+            padding: 20px;
+            width: 100%;
         }
 
-        /* Kengele ya Nyota */
-        .rating-badge {
-            background: rgba(255, 255, 255, 0.1);
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
-            padding: 8px 15px;
-            border-radius: 30px;
+            padding: 10px 20px;
+            border-radius: 50px;
             font-size: 14px;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             border: 1px solid rgba(255,255,255,0.2);
-            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 1px;
         }
 
-        /* Kichwa cha Maandishi */
-        .hero-content h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem); /* Ukubwa unaojirekebisha */
-            font-weight: 800;
-            line-height: 1.1;
+        h1 {
+            font-size: clamp(2.5rem, 10vw, 5rem); /* Ukubwa unaojirekebisha kutokana na skrini */
+            line-height: 1;
+            font-weight: 900;
             margin-bottom: 20px;
             text-transform: uppercase;
         }
 
-        /* Neno 'ZANZIBAR' - Rangi ya machungwa */
-        .hero-content h1 span {
-            color: #FF6600; 
+        h1 span {
+            color: #FF6600; /* Rangi ya machungwa kama picha ya kwanza */
         }
 
-        /* Maandishi ya maelezo */
-        .hero-content p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
+        p {
+            font-size: clamp(1rem, 2.5vw, 1.4rem);
+            max-width: 800px;
+            margin: 0 auto 35px auto; /* Inakaa katikati */
             line-height: 1.6;
-            opacity: 0.9;
-            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
 
-        /* Kitufe cha Kipekee (Button) */
-        .btn-cta {
+        /* 4. KITUFE (BUTTON) */
+        .btn {
             background: #FF6600;
             color: white;
             text-decoration: none;
-            padding: 15px 35px;
+            padding: 18px 45px;
             border-radius: 50px;
             font-weight: bold;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            transition: transform 0.3s ease, background 0.3s ease;
+            gap: 12px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.4);
         }
 
-        /* Athari za kipekee kwenye button */
-        .btn-cta:hover {
-            transform: scale(1.05);
+        .btn:hover {
             background: #e65c00;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 102, 0, 0.6);
         }
 
-        /* Navbar Overlay (fupi kama kwenye picha) */
-        .nav-overlay {
+        /* NAVBAR IWE JUU YA PICHA */
+        .navbar {
             position: absolute;
-            top: 30px;
-            left: 5%;
-            right: 5%;
+            top: 40px;
+            left: 0;
+            width: 100%;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            padding: 0 5%;
             z-index: 10;
         }
 
-        /* Logo ya Mduara */
-        .logo-circle {
-            width: 45px;
-            height: 45px;
-            border: 2px solid #FF6600;
+        .logo {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #FF6600;
             border-radius: 50%;
         }
 
-        /* Icons za Menu */
-        .menu-icons {
+        .nav-icons {
             display: flex;
-            gap: 20px;
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.8);
+            gap: 25px;
+            font-size: 24px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <section class="hero-section">
-        
-        <div class="nav-overlay">
-            <div class="logo-circle"></div>
-            <div class="menu-icons">
+    <section class="hero">
+        <nav class="navbar">
+            <div class="logo"></div>
+            <div class="nav-icons">
                 <span>🛒</span>
                 <span>☰</span>
             </div>
-        </div>
+        </nav>
 
-        <div class="hero-content">
-            <div class="rating-badge">
-                <span style="color:#FFD700">★★★★★</span> | Imeratibiwa 5.0 na wasafiri 1000+
+        <div class="content">
+            <div class="badge">
+                <span style="color:#FFD700">★★★★★</span> | Rated 5.0 by 1000+ travelers
             </div>
             
             <h1>DISCOVER <br> <span>ZANZIBAR</span> <br> PARADISE</h1>
             
-            <p>Ishi uchawi wa Spice Island kwa safari zilizoratibiwa na wataalamu wetu. Kutoka Stone Town ya kale hadi fukwe nzuri, gundua hazina zilizofichika na wataalamu wa ndani.</p>
+            <p>Experience the magic of the Spice Island with expertly curated tours. From ancient Stone Town to pristine beaches, discover hidden gems with local experts.</p>
             
-            <a href="#" class="btn-cta">
-                ✦ Gundua Safari Zote &rarr;
+            <a href="#" class="btn">
+                ✦ Explore All Tours &rarr;
             </a>
         </div>
     </section>
 
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 
