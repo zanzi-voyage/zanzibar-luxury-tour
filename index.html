@@ -716,14 +716,14 @@ body{
   <a href="#feedback" style="
     color:#007BFF;
     text-decoration:none;
-    font-size:35px;
+    font-size:33px;
     font-weight:bold;
     display:block;
   ">
     Customer’s Feedback
   </a>
 
-  <p style="margin-top:8px; color:#555; font-size:25px;">
+  <p style="margin-top:8px; color:#555; font-size:23px;">
     Discover what our customers say about their amazing travel experiences with us.
   </p>
 
@@ -745,51 +745,48 @@ body{
 
   <form>
 
-    <input type="text" placeholder="Your Name" required style="
-      width:100%;
-      padding:10px;
-      margin:10px 0;
-    ">
+    <input type="text" placeholder="Your Name" required style="width:100%; padding:10px; margin:10px 0;">
 
-    <input type="text" placeholder="Your Country" required style="
-      width:100%;
-      padding:10px;
-      margin:10px 0;
-    ">
+    <input type="text" placeholder="Your Country" required style="width:100%; padding:10px; margin:10px 0;">
 
-    <input type="email" placeholder="Your Email" required style="
-      width:100%;
-      padding:10px;
-      margin:10px 0;
-    ">
+    <input type="email" placeholder="Your Email" required style="width:100%; padding:10px; margin:10px 0;">
 
-    <select required style="
-      width:100%;
-      padding:10px;
-      margin:10px 0;
-    ">
-      <option value="">Your Rate</option>
-      <option>⭐ 1 - Poor</option>
-      <option>⭐⭐ 2 - Fair</option>
-      <option>⭐⭐⭐ 3 - Good</option>
-      <option>⭐⭐⭐⭐ 4 - Very Good</option>
-      <option>⭐⭐⭐⭐⭐ 5 - Excellent</option>
-    </select>
+    <!-- ⭐ Star Rating -->
+    <div style="margin:15px 0;">
+      <label>Your Rate:</label><br>
 
-    <textarea placeholder="Your Review..." required style="
-      width:100%;
-      padding:10px;
-      height:120px;
-      margin:10px 0;
-    "></textarea>
+      <span class="star" data-value="1">⭐</span>
+      <span class="star" data-value="2">⭐</span>
+      <span class="star" data-value="3">⭐</span>
+      <span class="star" data-value="4">⭐</span>
+      <span class="star" data-value="5">⭐</span>
 
-    <button type="submit" style="
-      padding:10px 20px;
-      cursor:pointer;
-    ">
+      <input type="hidden" id="rating" required>
+    </div>
+
+    <textarea placeholder="Your Review..." required style="width:100%; padding:10px; height:120px; margin:10px 0;"></textarea>
+
+    <button type="submit" style="padding:10px 20px; cursor:pointer;">
       Submit Review
     </button>
 
   </form>
 
-  </div>
+</div>
+
+<script>
+  const stars = document.querySelectorAll(".star");
+  const ratingInput = document.getElementById("rating");
+
+  stars.forEach(star => {
+    star.addEventListener("click", () => {
+      let value = star.getAttribute("data-value");
+      ratingInput.value = value;
+
+      stars.forEach(s => s.style.opacity = "0.3");
+      for (let i = 0; i < value; i++) {
+        stars[i].style.opacity = "1";
+      }
+    });
+  });
+</script>
