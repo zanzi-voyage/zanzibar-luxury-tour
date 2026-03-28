@@ -191,65 +191,75 @@ function toggleMenu2(){
 
 
 
+
 <style>
 
-/* Remba muonekano wa kitufe */
-#google_translate_element {
-    position: fixed;
-    bottom: 20px; /* Inakaa chini kidogo */
-    left: 20px;   /* Inakaa kushoto kama picha yako */
-    z-index: 9999;
-    background: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-    border: 1px solid #ddd;
+/* BUTTON */
+.translate-btn{
+  position: fixed;
+  top: 80px;
+  right: 15px;
+  background: #ff7b00;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 9999;
 }
 
-/* Kuficha maandishi ya ziada ya Google ili kionekane safi */
-.goog-te-gadget span {
-    display: none !important;
+/* HIDE GOOGLE UI */
+#google_translate_element{
+  position: fixed;
+  top: 120px;
+  right: 15px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
 }
 
-.goog-te-gadget {
-    color: transparent !important;
-    font-size: 0 !important;
-}
-
-/* Kufanya picha ya bendera na maandishi ya lugha yaonekane */
-.goog-te-gadget .goog-te-combo {
-    display: block !important;
-    padding: 5px;
-    border: none;
-    background: white;
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 14px !important;
-    color: #333 !important;
-}
-
-  
-
-/* Kuficha "Powered by Google" header inayotokea juu baada ya kutafsiri */
-.goog-te-banner-frame.skiptranslate {
-    display: none !important;
-}
-body {
-    top: 0px !important;
-}
 </style>
+</head>
 
+<body>
+
+<!-- 🌍 BUTTON -->
+<button class="translate-btn" onclick="openLangMenu()">🌍 Translate</button>
+
+<!-- GOOGLE ELEMENT -->
 <div id="google_translate_element"></div>
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'en', // Lugha asilia ya website yako
-    includedLanguages: 'en,it,ru,es,pt,de,cs,sw', // Lugha unazotaka zionekane
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    autoDisplay: false
-  }, 'google_translate_element');
+<!-- CONTENT -->
+<h1>Welcome to Zanzibar Tours</h1>
+<p>Discover amazing experiences in Tanzania</p>
+
+<!-- SCRIPT -->
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',
+      autoDisplay: false
+    },
+    'google_translate_element'
+  );
+}
+
+function openLangMenu(){
+  let select = document.querySelector(".goog-te-combo");
+
+  if(!select){
+    alert("Translator loading...");
+    return;
+  }
+
+  // HAPA INAFUNGUA MENU YA GOOGLE AUTOMATICALLY
+  select.focus();
 }
 </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
