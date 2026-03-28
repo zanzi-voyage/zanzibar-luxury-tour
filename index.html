@@ -1,16 +1,15 @@
-
-  <!-- ===== HERO SECTION START ===== -->
+<!-- ===== HERO + NAVBAR START ===== -->
 <style>
-.hero-section {
+.mulas-hero {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80") no-repeat center/cover;
+  background: url("https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&w=1600&q=80") no-repeat center/cover;
   font-family: Arial, sans-serif;
 }
 
-/* OVERLAY */
-.hero-section::after {
+/* overlay */
+.mulas-hero::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -21,37 +20,46 @@
 }
 
 /* NAVBAR */
-.hero-nav {
+.mulas-nav {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  padding: 20px 30px;
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
+  align-items: center;
   z-index: 2;
 }
 
-.hero-logo {
+.mulas-logo {
   color: white;
   font-size: 22px;
   font-weight: bold;
 }
 
-.hero-menu a {
-  color: white;
-  text-decoration: none;
-  margin-left: 25px;
-  font-size: 14px;
-  transition: 0.3s;
+/* MENU */
+.mulas-menu {
+  display: flex;
+  gap: 25px;
 }
 
-.hero-menu a:hover {
-  color: #00c853;
+.mulas-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* HAMBURGER */
+.mulas-toggle {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
 }
 
 /* HERO CONTENT */
-.hero-content {
+.mulas-content {
   position: relative;
   z-index: 2;
   height: 100%;
@@ -60,58 +68,77 @@
   align-items: center;
   text-align: center;
   color: white;
-  padding: 20px;
 }
 
-.hero-content h1 {
-  font-size: 50px;
-  margin-bottom: 15px;
+.mulas-content h1 {
+  font-size: 48px;
 }
 
-.hero-content p {
-  font-size: 18px;
-  margin-bottom: 25px;
+.mulas-content p {
+  margin: 15px 0;
 }
 
-/* BUTTON */
-.hero-btn {
-  display: inline-block;
-  padding: 14px 30px;
+.mulas-btn {
+  padding: 14px 28px;
   background: #00c853;
   color: white;
-  border-radius: 30px;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  border-radius: 30px;
 }
 
-.hero-btn:hover {
-  background: #00a844;
+/* MOBILE */
+@media (max-width: 768px) {
+  .mulas-menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    display: none;
+  }
+
+  .mulas-menu.active {
+    display: flex;
+  }
+
+  .mulas-toggle {
+    display: block;
+  }
 }
 </style>
 
-<div class="hero-section">
+<div class="mulas-hero">
 
-  <!-- NAV -->
-  <div class="hero-nav">
-    <div class="hero-logo">Mulas Adventures</div>
+  <!-- NAVBAR -->
+  <div class="mulas-nav">
+    <div class="mulas-logo">Mulas Adventures</div>
 
-    <div class="hero-menu">
+    <div class="mulas-menu" id="menu">
       <a href="#">Home</a>
       <a href="#">Tours</a>
       <a href="#">Safari</a>
       <a href="#">Contact</a>
     </div>
+
+    <div class="mulas-toggle" onclick="toggleMenu()">☰</div>
   </div>
 
-  <!-- CONTENT -->
-  <div class="hero-content">
+  <!-- HERO TEXT -->
+  <div class="mulas-content">
     <div>
       <h1>Explore Zanzibar</h1>
-      <p>Discover beaches, сафари, culture & unforgettable experiences</p>
-      <a href="#" class="hero-btn">Start Your Journey</a>
+      <p>Discover beaches, сафари & unforgettable experiences</p>
+      <a href="#" class="mulas-btn">Start Your Journey</a>
     </div>
   </div>
 
 </div>
-<!-- ===== HERO SECTION END ===== -->
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+<!-- ===== HERO + NAVBAR END ===== -->
