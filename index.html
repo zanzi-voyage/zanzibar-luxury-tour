@@ -1,144 +1,178 @@
-<!-- ===== HERO + NAVBAR START ===== -->
+<!-- ===== MULAS PREMIUM HERO START ===== -->
 <style>
-.mulas-hero {
+.mulas-hero2 {
   position: relative;
   width: 100%;
   height: 100vh;
   background: url("https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&w=1600&q=80") no-repeat center/cover;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  color: white;
 }
 
-/* overlay */
-.mulas-hero::after {
+/* DARK OVERLAY */
+.mulas-hero2::after {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
   top: 0;
   left: 0;
 }
 
 /* NAVBAR */
-.mulas-nav {
+.mulas-nav2 {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  padding: 20px 30px;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 30px;
   z-index: 2;
 }
 
-.mulas-logo {
-  color: white;
-  font-size: 22px;
+.mulas-logo2 {
+  font-size: 20px;
   font-weight: bold;
 }
 
-/* MENU */
-.mulas-menu {
+.mulas-icons {
   display: flex;
-  gap: 25px;
+  gap: 15px;
+  align-items: center;
 }
 
-.mulas-menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
+.mulas-cart {
+  background: white;
+  color: black;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 18px;
 }
 
-/* HAMBURGER */
-.mulas-toggle {
-  display: none;
+.mulas-menu-btn {
   font-size: 26px;
-  color: white;
   cursor: pointer;
 }
 
-/* HERO CONTENT */
-.mulas-content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
+/* DROPDOWN MENU */
+.mulas-menu2 {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: rgba(0,0,0,0.9);
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
 }
 
-.mulas-content h1 {
-  font-size: 48px;
-}
-
-.mulas-content p {
-  margin: 15px 0;
-}
-
-.mulas-btn {
-  padding: 14px 28px;
-  background: #00c853;
+.mulas-menu2 a {
   color: white;
   text-decoration: none;
+  margin: 10px 0;
+}
+
+/* HERO CONTENT */
+.mulas-content2 {
+  position: relative;
+  z-index: 2;
+  padding: 120px 30px;
+  max-width: 600px;
+}
+
+/* RATING */
+.mulas-rating {
+  background: rgba(255,255,255,0.1);
+  padding: 10px 20px;
   border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* TITLE */
+.mulas-content2 h1 {
+  font-size: 45px;
+  line-height: 1.1;
+  font-weight: 900;
+}
+
+.mulas-content2 span {
+  color: orange;
+}
+
+/* TEXT */
+.mulas-content2 p {
+  margin: 20px 0;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* BUTTON */
+.mulas-btn2 {
+  display: inline-block;
+  background: linear-gradient(45deg, orange, #ff5e00);
+  padding: 15px 30px;
+  border-radius: 40px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
-  .mulas-menu {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: rgba(0,0,0,0.9);
-    flex-direction: column;
-    width: 200px;
-    padding: 20px;
-    display: none;
-  }
-
-  .mulas-menu.active {
-    display: flex;
-  }
-
-  .mulas-toggle {
-    display: block;
+@media(max-width:768px){
+  .mulas-content2 h1{
+    font-size: 32px;
   }
 }
 </style>
 
-<div class="mulas-hero">
+<div class="mulas-hero2">
 
-  <!-- NAVBAR -->
-  <div class="mulas-nav">
-    <div class="mulas-logo">Mulas Adventures</div>
+  <!-- NAV -->
+  <div class="mulas-nav2">
+    <div class="mulas-logo2">Mulas</div>
 
-    <div class="mulas-menu" id="menu">
-      <a href="#">Home</a>
-      <a href="#">Tours</a>
-      <a href="#">Safari</a>
-      <a href="#">Contact</a>
+    <div class="mulas-icons">
+      <div class="mulas-cart">🛒</div>
+      <div class="mulas-menu-btn" onclick="toggleMenu2()">☰</div>
     </div>
-
-    <div class="mulas-toggle" onclick="toggleMenu()">☰</div>
   </div>
 
-  <!-- HERO TEXT -->
-  <div class="mulas-content">
-    <div>
-      <h1>Explore Zanzibar</h1>
-      <p>Discover beaches, сафари & unforgettable experiences</p>
-      <a href="#" class="mulas-btn">Start Your Journey</a>
-    </div>
+  <!-- MENU -->
+  <div class="mulas-menu2" id="menu2">
+    <a href="#">Home</a>
+    <a href="#">Tours</a>
+    <a href="#">Safari</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="mulas-content2">
+    <div class="mulas-rating">⭐⭐⭐⭐⭐ Rated 5.0 by 1000+ travelers</div>
+
+    <h1>
+      DISCOVER <br>
+      <span>ZANZIBAR</span><br>
+      PARADISE
+    </h1>
+
+    <p>
+      Experience the magic of the Spice Island with expertly curated tours.
+      From Stone Town to beautiful beaches.
+    </p>
+
+    <a href="#" class="mulas-btn2">Explore All Tours →</a>
   </div>
 
 </div>
 
 <script>
-function toggleMenu() {
-  document.getElementById("menu").classList.toggle("active");
+function toggleMenu2(){
+  document.getElementById("menu2").style.display =
+    document.getElementById("menu2").style.display === "flex" ? "none" : "flex";
 }
 </script>
-<!-- ===== HERO + NAVBAR END ===== -->
+<!-- ===== MULAS PREMIUM HERO END ===== -->
