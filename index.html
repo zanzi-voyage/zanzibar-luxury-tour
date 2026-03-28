@@ -839,3 +839,57 @@ body{
     });
   });
 </script>
+
+
+
+
+
+
+
+
+
+<div id="reviews-list"></div>
+
+<script>
+  function addReview(name, country, rating, review) {
+    const reviewsList = document.getElementById("reviews-list");
+
+    let starsDisplay = "★".repeat(rating);
+
+    const newReview = document.createElement("div");
+    newReview.style.borderBottom = "1px solid #eee";
+    newReview.style.padding = "12px 0";
+
+    newReview.innerHTML = `
+      <strong>${name}</strong> (${country})<br>
+      <span style="color:gold;">${starsDisplay}</span>
+      <p style="margin:5px 0 0;">${review}</p>
+    `;
+
+    // 🔥 inaweka juu kabisa
+    reviewsList.prepend(newReview);
+  }
+
+  // 🔥 CONNECT na form yako (hakikisha form id ni reviewForm)
+  document.getElementById("reviewForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const country = document.getElementById("country").value;
+    const rating = document.getElementById("rating").value;
+    const review = document.getElementById("review").value;
+
+    if (!rating) {
+      alert("Please select rating");
+      return;
+    }
+
+    addReview(name, country, rating, review);
+
+    this.reset();
+
+    // reset stars (ikiwa unazo)
+    document.querySelectorAll(".stars span").forEach(s => s.classList.remove("active"));
+  });
+</script>
+  
