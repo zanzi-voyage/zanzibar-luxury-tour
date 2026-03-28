@@ -191,72 +191,65 @@ function toggleMenu2(){
 
 
 
+<style>
 
+/* Remba muonekano wa kitufe */
+#google_translate_element {
+    position: fixed;
+    bottom: 20px; /* Inakaa chini kidogo */
+    left: 20px;   /* Inakaa kushoto kama picha yako */
+    z-index: 9999;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
 
+/* Kuficha maandishi ya ziada ya Google ili kionekane safi */
+.goog-te-gadget span {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    color: transparent !important;
+    font-size: 0 !important;
+}
+
+/* Kufanya picha ya bendera na maandishi ya lugha yaonekane */
+.goog-te-gadget .goog-te-combo {
+    display: block !important;
+    padding: 5px;
+    border: none;
+    background: white;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px !important;
+    color: #333 !important;
+}
+
+  
+
+/* Kuficha "Powered by Google" header inayotokea juu baada ya kutafsiri */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+body {
+    top: 0px !important;
+}
 </style>
 
-</head>
-
-<body>
-
-<!-- 🌍 LANGUAGE BUTTON -->
-<div class="lang-wrapper">
-
-  <button class="lang-btn">🌍 Language</button>
-
-  <div class="lang-menu" id="langMenu">
-    <div onclick="setLang('en')">🇬🇧 English</div>
-    <div onclick="setLang('fr')">🇫🇷 Français</div>
-    <div onclick="setLang('ro')">🇷🇴 Română</div>
-    <div onclick="setLang('ru')">🇷🇺 Русский</div>
-    <div onclick="setLang('it')">🇮🇹 Italiano</div>
-    <div onclick="setLang('es')">🇪🇸 Español</div>
-    <div onclick="setLang('pt')">🇵🇹 Português</div>
-    <div onclick="setLang('ar')">🇸🇦 العربية</div>
-  </div>
-
-</div>
-
-<!-- GOOGLE TRANSLATE ENGINE -->
 <div id="google_translate_element"></div>
 
-<!-- SAMPLE CONTENT -->
-<h1>Welcome to Zanzibar Tours</h1>
-<p>Discover amazing experiences in Tanzania</p>
-
-<!-- SCRIPT -->
-<script>
-function googleTranslateElementInit(){
-  new google.translate.TranslateElement(
-    {
-      pageLanguage: 'en',
-      autoDisplay: false
-    },
-    'google_translate_element'
-  );
-}
-
-// toggle menu
-document.querySelector(".lang-btn").onclick = function(){
-  let menu = document.getElementById("langMenu");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-
-// change language
-function setLang(lang){
-  let select = document.querySelector(".goog-te-combo");
-
-  if(!select){
-    alert("Translator still loading...");
-    return;
-  }
-
-  select.value = lang;
-  select.dispatchEvent(new Event("change"));
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en', // Lugha asilia ya website yako
+    includedLanguages: 'en,it,ru,es,pt,de,cs,sw', // Lugha unazotaka zionekane
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
 }
 </script>
-
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-</body>
-</html>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
