@@ -55,3 +55,79 @@ body{
     <p>Discover Zanzibar beauty. master ki is the food with a lot of fruits</p>
   </div>
 </section
+
+
+
+
+
+
+
+
+  <!-- FLOAT BUTTON -->
+<div class="lang-float">
+  <button onclick="toggleLang()">🌐 EN</button>
+
+  <div id="langBox" class="lang-box">
+    <div onclick="setLang('Italiano')">🇮🇹 Italiano</div>
+    <div onclick="setLang('Русский')">🇷🇺 Русский</div>
+    <div onclick="setLang('Español')">🇪🇸 Español</div>
+    <div onclick="setLang('Português')">🇵🇹 Português</div>
+    <div onclick="setLang('Deutsch')">🇩🇪 Deutsch</div>
+    <div onclick="setLang('Čeština')">🇨🇿 Čeština</div>
+    <div onclick="setLang('English')">🇬🇧 English</div>
+  </div>
+</div>
+
+<style>
+.lang-float{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: Arial;
+  z-index: 9999;
+}
+
+.lang-float button{
+  background: #ff7a00;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.lang-box{
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background: white;
+  width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.lang-box div{
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.lang-box div:hover{
+  background: #f2f2f2;
+}
+</style>
+
+<script>
+function toggleLang(){
+  let box = document.getElementById("langBox");
+  box.style.display = (box.style.display === "block") ? "none" : "block";
+}
+
+function setLang(lang){
+  alert("Umechagua: " + lang);
+  document.getElementById("langBox").style.display = "none";
+}
+</script>
