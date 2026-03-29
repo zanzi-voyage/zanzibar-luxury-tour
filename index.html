@@ -1,265 +1,57 @@
-<!-- ===== MULAS PREMIUM HERO START ===== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zanzibar Old Travel</title>
+
 <style>
-.mulas-hero2 {
-  position: relative;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+/* HERO */
+.hero{
   width: 100%;
   height: 100vh;
-  background: url("https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?auto=format&fit=crop&w=1600&q=80") no-repeat center/cover;
-  font-family: 'Arial', sans-serif;
-  color: white;
+  background-image: url("https://images.unsplash.com/photo-1586500036706-41963de24d8b?q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-/* DARK OVERLAY */
-.mulas-hero2::after {
+/* overlay */
+.hero::before{
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
-  top: 0;
-  left: 0;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
 }
 
-/* NAVBAR */
-.mulas-nav2 {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 30px;
-  z-index: 2;
-}
-
-.mulas-logo2 {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.mulas-icons {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
-
-.mulas-cart {
-  background: white;
-  color: black;
-  padding: 10px;
-  border-radius: 12px;
-  font-size: 18px;
-}
-
-.mulas-menu-btn {
-  font-size: 26px;
-  cursor: pointer;
-}
-
-/* DROPDOWN MENU */
-.mulas-menu2 {
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  background: rgba(0,0,0,0.9);
-  padding: 20px;
-  border-radius: 10px;
-  display: none;
-  flex-direction: column;
-}
-
-.mulas-menu2 a {
-  color: white;
-  text-decoration: none;
-  margin: 10px 0;
-}
-
-/* HERO CONTENT */
-.mulas-content2 {
+.hero-content{
   position: relative;
-  z-index: 2;
-  padding: 120px 30px;
-  max-width: 600px;
-}
-
-/* RATING */
-.mulas-rating {
-  background: rgba(255,255,255,0.1);
-  padding: 10px 20px;
-  border-radius: 30px;
-  display: inline-block;
-  margin-bottom: 20px;
-  font-size: 14px;
-}
-
-/* TITLE */
-.mulas-content2 h1 {
-  font-size: 45px;
-  line-height: 1.1;
-  font-weight: 900;
-}
-
-.mulas-content2 span {
-  color: orange;
-}
-
-/* TEXT */
-.mulas-content2 p {
-  margin: 20px 0;
-  color: #ddd;
-  line-height: 1.6;
-}
-
-/* BUTTON */
-.mulas-btn2 {
-  display: inline-block;
-  background: linear-gradient(45deg, orange, #ff5e00);
-  padding: 15px 30px;
-  border-radius: 40px;
   color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .mulas-content2 h1{
-    font-size: 32px;
-  }
+  text-align: center;
 }
 </style>
 
-<div class="mulas-hero2">
-
-  <!-- NAV -->
-  <div class="mulas-nav2">
-    <div class="mulas-logo2">Mulas</div>
-
-    <div class="mulas-icons">
-      <div class="mulas-cart">🛒</div>
-      <div class="mulas-menu-btn" onclick="toggleMenu2()">☰</div>
-    </div>
-  </div>
-
-  <!-- MENU -->
-  <div class="mulas-menu2" id="menu2">
-    <a href="#">Home</a>
-    <a href="#">Tours</a>
-    <a href="#">Safari</a>
-    <a href="#">Contact</a>
-  </div>
-
-  <!-- CONTENT -->
-  <div class="mulas-content2">
-    <div class="mulas-rating">⭐⭐⭐⭐⭐ Rated 5.0 by 1000+ travelers</div>
-
-    <h1>
-      DISCOVER <br>
-      <span>ZANZIBAR</span><br>
-      PARADISE
-    </h1>
-
-    <p>
-      Experience the magic of the Spice Island with expertly curated tours.
-      From Stone Town to beautiful beaches.
-    </p>
-
-    <a href="#" class="mulas-btn2">Explore All Tours →</a>
-  </div>
-
-</div>
-
-<script>
-function toggleMenu2(){
-  document.getElementById("menu2").style.display =
-    document.getElementById("menu2").style.display === "flex" ? "none" : "flex";
-}
-</script>
-<!-- ===== MULAS PREMIUM HERO END ===== -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style>
-
-/* BUTTON */
-.translate-btn{
-  position: fixed;
-  top: 80px;
-  right: 15px;
-  background: #ff7b00;
-  color: white;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 30px;
-  cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  z-index: 9999;
-}
-
-/* HIDE GOOGLE UI */
-#google_translate_element{
-  position: fixed;
-  top: 120px;
-  right: 15px;
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-}
-
-</style>
 </head>
 
 <body>
 
-<!-- 🌍 BUTTON -->
-<button class="translate-btn" onclick="openLangMenu()">🌍 Translate</button>
-
-<!-- GOOGLE ELEMENT -->
-<div id="google_translate_element"></div>
-
-<!-- CONTENT -->
-<h1>Welcome to Zanzibar Tours</h1>
-<p>Discover amazing experiences in Tanzania</p>
-
-<!-- SCRIPT -->
-<script>
-function googleTranslateElementInit(){
-  new google.translate.TranslateElement(
-    {
-      pageLanguage: 'en',
-      autoDisplay: false
-    },
-    'google_translate_element'
-  );
-}
-
-function openLangMenu(){
-  let select = document.querySelector(".goog-te-combo");
-
-  if(!select){
-    alert("Translator loading...");
-    return;
-  }
-
-  // HAPA INAFUNGUA MENU YA GOOGLE AUTOMATICALLY
-  select.focus();
-}
-</script>
-
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-</body>
-</html>
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Zanzibar Old Travel</h1>
+    <p>Discover Zanzibar beauty. master ki is the food with a lot of fruits</p>
+  </div>
+</section
