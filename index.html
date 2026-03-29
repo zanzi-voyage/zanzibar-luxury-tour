@@ -120,15 +120,29 @@ body{
 }
 </style>
 
-<div id="google_translate_element"></div>
 
-<div id="google_translate_element"></div>
+
+
+
+
+  <div id="google_translate_element"></div>
+
+<style>
+/* kuficha box kubwa ya Google */
+.goog-te-banner-frame {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
+</style>
 
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'en',
-    autoDisplay: true
+    includedLanguages: 'en,it,es,fr,de,pt,ru',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
   }, 'google_translate_element');
 }
 </script>
