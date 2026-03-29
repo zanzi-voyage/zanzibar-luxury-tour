@@ -63,18 +63,18 @@ body{
 
 
 
-  <!-- FLOAT BUTTON -->
+<!-- FLOAT LANGUAGE BUTTON -->
 <div class="lang-float">
   <button onclick="toggleLang()">🌐 EN</button>
 
   <div id="langBox" class="lang-box">
-    <div onclick="setLang('Italiano')">🇮🇹 Italiano</div>
-    <div onclick="setLang('Русский')">🇷🇺 Русский</div>
-    <div onclick="setLang('Español')">🇪🇸 Español</div>
-    <div onclick="setLang('Português')">🇵🇹 Português</div>
-    <div onclick="setLang('Deutsch')">🇩🇪 Deutsch</div>
-    <div onclick="setLang('Čeština')">🇨🇿 Čeština</div>
-    <div onclick="setLang('English')">🇬🇧 English</div>
+    <div onclick="setLang('it')">🇮🇹 Italiano</div>
+    <div onclick="setLang('ru')">🇷🇺 Русский</div>
+    <div onclick="setLang('es')">🇪🇸 Español</div>
+    <div onclick="setLang('pt')">🇵🇹 Português</div>
+    <div onclick="setLang('de')">🇩🇪 Deutsch</div>
+    <div onclick="setLang('cs')">🇨🇿 Čeština</div>
+    <div onclick="setLang('en')">🇬🇧 English</div>
   </div>
 </div>
 
@@ -89,12 +89,11 @@ body{
 
 .lang-float button{
   background: #ff7a00;
-  color: white;
+  color: #fff;
   border: none;
   padding: 12px 15px;
   border-radius: 50px;
   cursor: pointer;
-  font-size: 14px;
 }
 
 .lang-box{
@@ -102,7 +101,7 @@ body{
   position: absolute;
   bottom: 60px;
   right: 0;
-  background: white;
+  background: #fff;
   width: 180px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -120,48 +119,39 @@ body{
 }
 </style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <style>
-/* HIFADHI BAR YA JUU YA GOOGLE */
+<!-- GOOGLE TRANSLATE HIDE FIX (ONLY ONCE) -->
+<style>
 .goog-te-banner-frame,
 .goog-te-balloon-frame {
   display: none !important;
 }
 
-/* Ondoa nafasi inayoachwa juu */
 body {
   top: 0px !important;
   position: static !important;
 }
 
-/* Ficha Google icon ya top-left */
 .goog-te-gadget {
   color: transparent !important;
 }
 .goog-te-gadget span {
   display: none !important;
 }
-  </style>
-  <script>
-setInterval(() => {
-  let frame = document.querySelector('.goog-te-banner-frame');
-  if(frame){
-    frame.style.display = 'none';
-  }
-  document.body.style.top = '0px';
-}, 100);
-    </script>
+</style>
 
-  
+<script>
+// toggle dropdown
+function toggleLang(){
+  const box = document.getElementById("langBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
+// set language using Google Translate
+function setLang(lang){
+  let select = document.querySelector("select.goog-te-combo");
+  if(select){
+    select.value = lang;
+    select.dispatchEvent(new Event("change"));
+  }
+}
+</script>
