@@ -125,26 +125,43 @@ body{
 
 
 
-  <div id="google_translate_element"></div>
 
-<style>
-/* kuficha box kubwa ya Google */
-.goog-te-banner-frame {
+
+
+
+
+
+
+
+  <style>
+/* HIFADHI BAR YA JUU YA GOOGLE */
+.goog-te-banner-frame,
+.goog-te-balloon-frame {
   display: none !important;
 }
+
+/* Ondoa nafasi inayoachwa juu */
 body {
-  top: 0 !important;
+  top: 0px !important;
+  position: static !important;
 }
-</style>
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    includedLanguages: 'en,it,es,fr,de,pt,ru',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-  }, 'google_translate_element');
+/* Ficha Google icon ya top-left */
+.goog-te-gadget {
+  color: transparent !important;
 }
-</script>
+.goog-te-gadget span {
+  display: none !important;
+}
+  </style>
+  <script>
+setInterval(() => {
+  let frame = document.querySelector('.goog-te-banner-frame');
+  if(frame){
+    frame.style.display = 'none';
+  }
+  document.body.style.top = '0px';
+}, 100);
+    </script>
 
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
