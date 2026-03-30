@@ -511,5 +511,51 @@ function googleTranslateElementInit() {
 
 
 
+<script>
+function setLang(lang) {
+  // Tunatafuta lile box la Google lililojificha
+  let select = document.querySelector("select.goog-te-combo");
+  if (select) {
+    select.value = lang;
+    // Inalazimisha Google itafsiri sasa hivi
+    select.dispatchEvent(new Event("change"));
+  } else {
+    // Kama box halijatokea bado, jaribu tena baada ya sekunde 1
+    setTimeout(() => setLang(lang), 1000);
+  }
+  
+  // Funga list yako baada ya kuchagua lugha
+  toggleLang();
+}
+
+function toggleLang() {
+  const box = document.getElementById("langBox");
+  if (box) {
+    box.style.display = box.style.display === "block" ? "none" : "block";
+  }
+}
+</script>
+<style>
+  /* Ficha bar ya juu kabisa */
+  iframe.goog-te-banner-frame {
+    display: none !important;
+  }
+  body {
+    top: 0px !important;
+  }
+
+  /* Ficha lile box la Google (dropdown) ambalo hutaki lioneleke */
+  #google_translate_element, 
+  .goog-te-gadget, 
+  .goog-te-combo {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  /* Hii inazuia page isishuke chini */
+  .skiptranslate {
+    display: none !important;
+  }
+</style>
 
   
